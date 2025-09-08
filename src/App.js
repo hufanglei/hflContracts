@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+import json from './build/HflToken.json'
+
+console.log(json)
+
 function App() {
   return (
     <div className="App">
