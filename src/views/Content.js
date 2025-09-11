@@ -14,6 +14,12 @@ export default function Content() {
             // 1.获取连接后的合约
             const web = await initWeb()
             console.log(web)
+
+            // useContext, useReducer
+            // 订阅发布
+            // 设置成全局
+            window.web = web  // 全局对象
+
             // 2.获取资产信息
             // 3.获取订单信息
             // const web3 = new Web3(Web3.givenProvider)
@@ -28,7 +34,6 @@ export default function Content() {
         // 先授权
         let account = await web3.eth.requestAccounts()
         console.log(account[0])
-
 
         const firstkey = Object.keys(tokenjson.networks)[0]
         console.log('firstkey', firstkey)
