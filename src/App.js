@@ -4,13 +4,13 @@ import './App.css';
 import json from './build/HflToken.json'
 import Content from './views/Content';
 
-console.log(json)
-
+import { Provider } from 'react-redux';
+import store from './redux/store';
 function App() {
   return (
-      <div>
-        <Content>Content</Content>
-      </div>
+      <Provider store={store}>
+        <Content></Content>
+      </Provider>
   );
 }
 
