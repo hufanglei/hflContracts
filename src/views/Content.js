@@ -10,6 +10,8 @@ import exchangejson from '../build/Exchange.json'
 import Order from './Order'
 import Balance from './Balance'
 import { loadBalanceData } from '../redux/slices/balanceSlice'
+import { loadCancelOrderData , loadAllOrderData, loadFillOrderData } from '../redux/slices/orderSlice'
+
 
 export default function Content() {
     const dispatch = useDispatch()
@@ -26,7 +28,12 @@ export default function Content() {
 
             // 2.获取资产信息
             dispatch(loadBalanceData(web))
+
             // 3.获取订单信息
+            dispatch(loadCancelOrderData(web))
+            dispatch(loadAllOrderData(web))
+            dispatch(loadFillOrderData(web))
+
       
         };
         start()

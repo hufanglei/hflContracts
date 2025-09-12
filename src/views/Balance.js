@@ -28,7 +28,7 @@ export default function Balance() {
                 <Statistic
                   title="钱包中以太币"
                   value={convert(EtherWallet)}
-                  precision={2}
+                  precision={3}
                   valueStyle={{ color: '#3f8600' }}
                   prefix={<div>ETH</div>}
                 />
@@ -50,7 +50,7 @@ export default function Balance() {
                 <Statistic
                   title="交易所中以太币"
                   value={convert(EtherExchange)}
-                  precision={2}
+                  precision={3}
                   valueStyle={{ color: '#faad14' }}
                   prefix={<div>ETH</div>}
                 />
