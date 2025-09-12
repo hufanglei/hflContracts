@@ -3,7 +3,6 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { setTokenWallet } from '../redux/slices/balanceSlice'
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 
 import { Card, Col, Row, Statistic } from 'antd';
 
