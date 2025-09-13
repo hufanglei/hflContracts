@@ -34,8 +34,19 @@ export default function Content() {
             dispatch(loadAllOrderData(web))
             dispatch(loadFillOrderData(web))
 
-      
-        };
+            // 监听
+            web.exchange.events.Order({}, (error, event)=>{
+              dispatch(loadAllOrderData(web))
+            })
+            web.exchange.events.Cancel({}, (error, event)=>{
+              dispatch(loadCancelOrderData(web))
+            })
+            web.exchange.events.Trade({}, (error,event)=>{
+              dispatch(loadFillOrderData(web))
+              dispatch(loadBalanceData(web))
+            })
+        }
+
         start()
     }, [dispatch])
 
