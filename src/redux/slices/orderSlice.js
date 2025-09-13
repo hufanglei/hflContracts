@@ -5,13 +5,13 @@ import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 const orderSlice = createSlice({
   name: "order",   // type: balance/get
   initialState:{
-      CancerOrders:[],
+      CancelOrders:[],
       FillOrders:[],
       AllOrders:[]
   },
   reducers: {
-    setCancerOrders: (state, action) => {
-      state.CancerOrders = action.payload;
+    setCancelOrders: (state, action) => {
+      state.CancelOrders = action.payload;
     },
     setFillOrders: (state, action) => {
       state.FillOrders = action.payload;
@@ -22,7 +22,7 @@ const orderSlice = createSlice({
   },
 });
 
-export const { setCancerOrders, setFillOrders, setAllOrders} = orderSlice.actions;
+export const { setCancelOrders, setFillOrders, setAllOrders} = orderSlice.actions;
 
 export default orderSlice.reducer;
 
@@ -42,7 +42,7 @@ export const loadCancelOrderData = createAsyncThunk(
 
         // console.log(cancerOrders)
 
-        dispatch(setCancerOrders(cancelOrders))
+        dispatch(setCancelOrders(cancelOrders))
 
     }
 )

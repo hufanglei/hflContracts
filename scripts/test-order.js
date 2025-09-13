@@ -27,14 +27,14 @@ module.exports = async function (callback) {
             from: accounts[0]
         });
 
-        // 第二步 account0 ---> 交易所存入 10以太币
+        // 第二步 account0 ---> 交易所存入 100以太币
         await exchange.depositEther({
             from: accounts[0],
-            value: toWei(10)
+            value: toWei(100)
         });
 
         let res1 = await exchange.tokens(ETHER_ADDRESS, accounts[0]);
-        // console.log("account[0]-在交易所的以太币", fromWei(res1));
+        console.log("account[0]-在交易所的以太币", fromWei(res1));
 
         // 第二步 account0 ---> 交易所存入 10000 HFL
         await hflToken.approve(exchange.address, toWei(100000), {
@@ -46,7 +46,7 @@ module.exports = async function (callback) {
         });
 
         let res2 = await exchange.tokens(hflToken.address, accounts[0]);
-        // console.log("account[0]-在交易所的HFL币", fromWei(res2));
+        console.log("account[0]-在交易所的HFL币", fromWei(res2));
 
         // 第三步 account1 ---> 交易所存入 5以太币
         await exchange.depositEther({
@@ -55,7 +55,7 @@ module.exports = async function (callback) {
         });
 
         let res3 = await exchange.tokens(ETHER_ADDRESS, accounts[1]);
-        // console.log("account[1]-在交易所的以太币", fromWei(res3));
+        console.log("account[1]-在交易所的以太币", fromWei(res3));
 
         // 第三步 account1 ---> 交易所存入 5000 HFL
         await hflToken.approve(exchange.address, toWei(50000), {
